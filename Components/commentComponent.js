@@ -15,9 +15,9 @@ template.innerHTML = `
 
 <style></style>
 <div id="comment">
-<p> Name: <span id="names">Jennifer</span> </p>
-      <p> Email: <span id="emails">xxx@gmail</span> </p>
-      <p> Comment: <span id="comments">Hello</span> </p>
+<p> Name: <span id="names"></span> </p>
+      <p> Email: <span id="emails"></span> </p>
+      <p> Comment: <span id="comments"></span> </p>
       </div>
 `;
 
