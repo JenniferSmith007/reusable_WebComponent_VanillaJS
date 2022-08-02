@@ -1,7 +1,7 @@
 
 
 import "./commentComponent";
-import commentComponent from "./commentComponent";
+
 import "./FormDomSetUp";
 
 
@@ -126,25 +126,25 @@ document.addEventListener("DOMContentLoaded", () => {
         commentSec.setAttribute("comment", commentval);
 
         
-    let newDates = document.getElementById("dates")
-    console.log(newDates)
-    commentSec.append(newDates)
+    // let newDates = document.getElementById("dates")
+    // console.log(newDates)
+    // commentSec.append(newDates)
 
         
-        const gettingDate = () => {
-            const date = new Date();
-let day = date.getDate();
-let month = date.getMonth() + 1;
-let year = date.getFullYear();
+//         const gettingDate = () => {
+//             const date = new Date();
+// let day = date.getDate();
+// let month = date.getMonth() + 1;
+// let year = date.getFullYear();
 
 
-let currentDate = `${month}-${day}-${year}`;
-console.log(currentDate); 
-        }
+// let currentDate = `${month}-${day}-${year}`;
+// console.log(currentDate); 
+//         }
         
 
       
-        commentSec.setAttribute("dates",gettingDate );
+//         commentSec.setAttribute("dates",gettingDate );
         
         let commentDisplay = document.createElement('div')
         commentDisplay.setAttribute("id", "commentDisplay")
@@ -153,7 +153,9 @@ console.log(currentDate);
         const myElementClone = commentSec.cloneNode()
         console.log(myElementClone)
         commentDisplay.appendChild(myElementClone)
-        
+         if (myElementClone >= 2){
+          document.getElementById("#com").style.display = "none"
+         }
       
       });
 
@@ -175,11 +177,11 @@ console.log(currentDate);
   if (buttonfunc()=== true){
  
 console.log('clicked')
-    let comment = new commentComponent();
+    // let comment = new commentComponent();
     console.log('should be comme')
-    comment.appendChild(listCom)
-    document.body.appendChild(comment)
-    console.log(comment)
+    // comment.appendChild(listCom)
+    // document.body.appendChild(comment)
+    // console.log(comment)
   }else if(!buttonfunc()) {
     console.log('ok')
   }
@@ -191,5 +193,3 @@ console.log('clicked')
 
 
 export default "./addCommentState.js";
-
-

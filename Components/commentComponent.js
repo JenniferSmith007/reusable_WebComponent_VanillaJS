@@ -15,9 +15,7 @@ document.body.append(commentComponent)
 const template = document.createElement('template'); 
 
 template.innerHTML = `
-
 <style></style>
-
 <p>  Name: <span id="names"></span> </p>
       <p> Email: <span id="emails"></span> </p>
       <p> Comment:  <span id="comments"></span> </p>
@@ -44,7 +42,7 @@ shadow.append(template)
 }
 
 static get observedAttributes() {
-    return ['name', 'email', 'comment', ];
+    return ['name', 'email', 'comment' ];
   }
 
   attributeChangedCallback(property, oldValue, newValue) {
@@ -102,9 +100,7 @@ if(nameInput !== 0){
   if(commentInput !== 0){
     this.commentHolder.textContent = commentInput
   }
-  if(dateInput !== 0){
-    this.dateHolder.textContent = dateInput
-  }
+
 
 }
 }
@@ -126,5 +122,5 @@ window.customElements.define('comment-component',CommentComponent);
 
 
 
-export default CommentComponent
-// export default './commentComponent.js'
+// export default CommentComponent
+export default './commentComponent.js'
