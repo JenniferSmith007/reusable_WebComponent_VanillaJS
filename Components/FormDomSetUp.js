@@ -7,6 +7,7 @@ let form = document.createElement("form")
 form.setAttribute("id", "form")
 
 
+
 // name setting up 
 let nameInput = document.createElement("INPUT");
 nameInput.setAttribute("type", "text");
@@ -47,9 +48,12 @@ checkbox.setAttribute("id", "post");
 // setting up submit button 
 let button = document.createElement("button");
 button.setAttribute("type", "submit");
+button.setAttribute("id", "button");
 button.textContent="submit"
 
-
+let reset = document.createElement("input")
+reset.setAttribute("type", "reset")
+reset.setAttribute("value", "reset")
 
 
 
@@ -59,6 +63,7 @@ form.appendChild(commentInput)
 form.appendChild(label)
 form.appendChild(checkbox)
 form.appendChild(button)
+form.appendChild(reset)
 
 document.body.appendChild(form)
 
