@@ -47,4 +47,41 @@ headDiv.appendChild(headerTextCompright2Holder)
 
 
 
+let navTwo = document.getElementById("navtwo")
+console.log(navTwo)
+
+ let companyLogo = document.createElement("IMG")
+ companyLogo.setAttribute("src", "images/PatagoniaLogo.svg")
+ companyLogo.setAttribute("id", "complogo")
+ navTwo.appendChild(companyLogo)
+
+
+ let navtwoTextShop = document.createElement('p')
+ navtwoTextShop.textContent = 'Shop'
+ navtwoTextShop.setAttribute("id", "compnavtext")
+navTwo.appendChild(navtwoTextShop)
+
+
+let navtwoTextActivism = document.createElement('p')
+navtwoTextActivism.textContent = 'Activism'
+navtwoTextActivism.setAttribute("id", "compnavtext")
+navTwo.appendChild(navtwoTextActivism)
+
+
+let navtwoTextSports = document.createElement('p')
+navtwoTextSports.textContent = 'Sports'
+navtwoTextSports.setAttribute("id", "compnavtext")
+navTwo.appendChild(navtwoTextSports)
+
+let navtwoTextStories = document.createElement('p')
+navtwoTextStories.textContent = 'Stories'
+navtwoTextStories.setAttribute("id", "compnavtext")
+navTwo.appendChild( navtwoTextStories)
+
+
+
+
+
+
+
 export default './style.js'
