@@ -58,26 +58,37 @@ console.log(navTwo)
 
  let navtwoTextShop = document.createElement('p')
  navtwoTextShop.textContent = 'Shop'
- navtwoTextShop.setAttribute("id", "compnavtext")
+ navtwoTextShop.setAttribute("id", "navp")
 navTwo.appendChild(navtwoTextShop)
 
 
 let navtwoTextActivism = document.createElement('p')
 navtwoTextActivism.textContent = 'Activism'
-navtwoTextActivism.setAttribute("id", "compnavtext")
+navtwoTextActivism.setAttribute("id", "navp")
 navTwo.appendChild(navtwoTextActivism)
 
 
 let navtwoTextSports = document.createElement('p')
 navtwoTextSports.textContent = 'Sports'
-navtwoTextSports.setAttribute("id", "compnavtext")
+navtwoTextSports.setAttribute("id", "navp")
 navTwo.appendChild(navtwoTextSports)
 
 let navtwoTextStories = document.createElement('p')
 navtwoTextStories.textContent = 'Stories'
-navtwoTextStories.setAttribute("id", "compnavtext")
+navtwoTextStories.setAttribute("id", "navp")
 navTwo.appendChild( navtwoTextStories)
 
+let companyIcons = document.createElement("IMG")
+companyIcons.setAttribute("src", "images/PatagoniaICons.svg")
+companyIcons.setAttribute("id", "compicons")
+navTwo.appendChild(companyIcons)
+
+let navthreeDiv = document.getElementById("navthree")
+console.log(navthreeDiv)
+let nav3 = document.createElement("IMG")
+nav3.setAttribute("src", "images/nav3.svg")
+nav3.setAttribute("id", "compnavthree")
+navthreeDiv.appendChild(nav3)
 
 
 
