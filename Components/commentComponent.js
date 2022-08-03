@@ -3,8 +3,8 @@ import'./addCommentState'
 
 
 
-let main = document.getElementById("main")
-console.log(main)
+// let main = document.getElementById("main")
+// console.log(main)
 
 
 
@@ -13,7 +13,7 @@ commentComponent.setAttribute("name", "")
 commentComponent.setAttribute("email", "")
 commentComponent.setAttribute("comment", "")
 commentComponent.setAttribute("id", "com")
-main.appendChild(commentComponent)
+document.body.appendChild(commentComponent)
 
 // creating the template 
 

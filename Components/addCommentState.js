@@ -147,14 +147,13 @@ document.addEventListener("DOMContentLoaded", () => {
       
 //         commentSec.setAttribute("dates",gettingDate );
 
-  let main = document.getElementById("main")
-    console.log(main)
+
 
         
         let commentDisplay = document.createElement('div')
         commentDisplay.setAttribute("id", "commentDisplay")
 
-        main.appendChild(commentDisplay)
+        document.body.appendChild(commentDisplay)
      
         const myElementClone = commentSec.cloneNode()
         console.log(myElementClone)

@@ -6,8 +6,7 @@
 let form = document.createElement("form")
 form.setAttribute("id", "form")
 
-let main = document.getElementById("main")
-console.log(main)
+
 
 // name setting up 
 let nameInput = document.createElement("INPUT");
@@ -38,7 +37,7 @@ commentInput.setAttribute("placeholder", "Write a detailed review here. Tell us 
 
 // setting up checkbox 
 let label = document.createElement("p");
-label.textContent = 'By checking this box your review will be posted public.';
+label.textContent = 'post public .';
 label.setAttribute("for", "post")
 let checkbox = document.createElement("INPUT");
 checkbox.setAttribute("type", "checkbox");
@@ -65,7 +64,7 @@ form.appendChild(label)
 form.appendChild(checkbox)
 form.appendChild(button)
 form.appendChild(reset)
-
-main.appendChild(form)
+document.body.appendChild(form)
+// main.appendChild(form)
 
 export default './DomSetUp.js'

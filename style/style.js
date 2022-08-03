@@ -90,7 +90,18 @@ nav3.setAttribute("src", "images/nav3.svg")
 nav3.setAttribute("id", "compnavthree")
 navthreeDiv.appendChild(nav3)
 
+let main = document.getElementById("main")
+console.log(main)
 
+
+
+
+
+let mainImg = document.createElement("IMG")
+mainImg.setAttribute("src", "images/PatagoniaMerch.svg")
+mainImg.setAttribute("id", "compmerch")
+console.log(mainImg)
+main.appendChild(mainImg)
 
 
 

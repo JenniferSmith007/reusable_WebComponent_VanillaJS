@@ -5,6 +5,8 @@ body{
     'nav nav nav'
     'nav nav nav'
     ' main main main   '
+    ' main main main   '
+    ' main main main   '
     ' footer footer footer ';
 
     font-family: Arial, Helvetica, sans-serif;
@@ -39,19 +41,21 @@ header{
     grid-row: 2 / span 1;
    font-weight: 700;
   
-    
+    margin-left: 15%;
    
 }
-/* p #navtwo {
-    margin-top: 3em;
-} */
+#navp{
+margin-left: 12%;
+}
 main {
     grid-area: main;  
     background-color: white;
     grid-column: 2 / span 1;
-    grid-row: 3 / span 1;
+    grid-row: 3 / span 2;
     
 }
+
+
 #complogo,#compww, #comppro, #compcenter, #complocaladd, #complogin {
     color: white
 }
@@ -92,12 +96,25 @@ main {
 
  
 }
-
-
+#form{
+   grid-area: footer; 
+    
+}
+#compmerch{
+    grid-area: main;
+    width: 30em;
+    
+}
+#com {
+    grid-area: main;
+}
+/* #commentDisplay{
+    margin-bottom: 10em;
+    grid-area: main;
+} */
 footer{
     grid-area: footer;  
-    background-color: pink;
-    grid-column: 1 / span 3;
+    
 }
 
 /* body{
