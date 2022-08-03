@@ -3,19 +3,31 @@ import'./addCommentState'
 
 
 
+let main = document.getElementById("main")
+console.log(main)
+
+
+
 let commentComponent = document.createElement("comment-component")
 commentComponent.setAttribute("name", "")
 commentComponent.setAttribute("email", "")
 commentComponent.setAttribute("comment", "")
 commentComponent.setAttribute("id", "com")
-document.body.append(commentComponent)
+main.appendChild(commentComponent)
 
 // creating the template 
 
 const template = document.createElement('template'); 
+template.setAttribute("id", "temp")
 
 template.innerHTML = `
-<style></style>
+<style>
+
+
+
+
+</style>
+
 <p>  Name: <span id="names"></span> </p>
       <p> Email: <span id="emails"></span> </p>
       <p> Comment:  <span id="comments"></span> </p>
@@ -103,6 +115,10 @@ if(nameInput !== 0){
 
 
 }
+
+
+
+
 }
 
 window.customElements.define('comment-component',CommentComponent);

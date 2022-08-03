@@ -5,7 +5,6 @@ import "./commentComponent";
 import "./FormDomSetUp";
 
 
-
 const display = document.querySelector("comment-component");
 
 
@@ -62,6 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
      
         
         const commentSec = document.querySelector("#com");
+
+    
         let postComm = document.querySelector("input[type=checkbox]:checked")
 
             if(!postComm){
@@ -145,11 +146,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       
 //         commentSec.setAttribute("dates",gettingDate );
+
+  let main = document.getElementById("main")
+    console.log(main)
+
         
         let commentDisplay = document.createElement('div')
         commentDisplay.setAttribute("id", "commentDisplay")
 
-        document.body.appendChild(commentDisplay)
+        main.appendChild(commentDisplay)
+     
         const myElementClone = commentSec.cloneNode()
         console.log(myElementClone)
         commentDisplay.appendChild(myElementClone)

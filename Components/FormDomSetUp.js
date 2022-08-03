@@ -6,7 +6,8 @@
 let form = document.createElement("form")
 form.setAttribute("id", "form")
 
-
+let main = document.getElementById("main")
+console.log(main)
 
 // name setting up 
 let nameInput = document.createElement("INPUT");
@@ -65,6 +66,6 @@ form.appendChild(checkbox)
 form.appendChild(button)
 form.appendChild(reset)
 
-document.body.appendChild(form)
+main.appendChild(form)
 
 export default './DomSetUp.js'
