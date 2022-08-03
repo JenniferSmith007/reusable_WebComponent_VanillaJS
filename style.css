@@ -106,7 +106,11 @@ main {
     
 }
 #com {
+    margin-top: 5%;
     grid-area: main;
+}
+#commentDisplay{
+    margin-top: 190%;
 }
 /* #commentDisplay{
     margin-bottom: 10em;
