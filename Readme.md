@@ -16,5 +16,5 @@ Update the page to display an image and add a comment form. The comment form sho
 ### What was done to complete task: 
 - Created functionality to take user input with a form 
 - Used state to control the comments being posted 
-- Created User interface design using ***Figma** 
-- implemented design using DOM and CSS 
+- Created User interface design using **Figma** 
+- Implemented design using DOM and CSS 
