@@ -10,7 +10,7 @@ Update the page to display an image and add a comment form. The comment form sho
 - A checkbox to agree to have the comment posted
 - A submit button
 - All three comment fields should be required and be valid before being submitted
-- Comments should be managed by a ***state manager***; whenever a new comment is added, it should trigger the state manager that then updates the displayed comments on the site
+- Comments should be managed by a ***state manager***; Whenever a new comment is added, it should trigger the state manager that then updates the displayed comments on the site
 
 
 ### What was done to complete task: 
@@ -18,3 +18,5 @@ Update the page to display an image and add a comment form. The comment form sho
 - Used state to control the comments being posted 
 - Created User interface design using **Figma** 
 - Implemented design using DOM and CSS 
+
+# ❗️How to create a custom element with shadow DOM and add basic state 🚀
