@@ -23,3 +23,10 @@ ________________________________________________
 
 〰️ Let's get started on creating a custom element **no css** will be included in this guide. 
 
+To begin creating the component, create a folder that holds: 
+
+- commentComponent.js
+- addCommentState.js
+- FormDomSetUp.js
+
+
