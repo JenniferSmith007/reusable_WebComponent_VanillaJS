@@ -60,19 +60,18 @@ Using the DOM or the body in the index.html to create a form element that will h
 Append all the elements to the form then append the form to the body 
 
 creating the button 
-<br>
+
 > let button = document.createElement("button");
-<br>
-> button.setAttribute("type", "submit");
-<br>
-> button.setAttribute("id", "button");
-<br>
+>
+
+>> button.setAttribute("id", "button");
+>
 append the element to the form 
-<br>
+>
 > form.appendChild(button)
-<br>
+>
 append the form to the body
-<br>
+>
 > document.body.appendChild(form)
 
 
