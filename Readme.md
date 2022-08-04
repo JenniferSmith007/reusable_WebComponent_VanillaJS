@@ -21,7 +21,9 @@ Update the page to display an image and add a comment form. The comment form sho
 ________________________________________________
 # ❗️Creating A Custom Element With Shadow DOM And Basic State 🚀
 
-〰️ Let's get started on creating a custom element **no css** will be included in this guide. 
+〰️ Let's get started on creating a custom element **no css** will be included in this guide. 〰️
+
+#### Folder Structure:
 
 To begin creating the component, create a folder that holds: 
 
