@@ -7,6 +7,6 @@ Defining a custom HTML elements by creating a reusable comment element.  The com
 ### Task: 
 
  Build a reusable comment component that meets these requirements:
-     1. Uses Custom Elements
-     2. Can take a name, email address, and comment as an attribute
-     3. Display the name, email address, and attribute, in a custom layout that’s built-in to the component
+     - Uses Custom Elements
+     - Can take a name, email address, and comment as an attribute
+     - Display the name, email address, and attribute, in a custom layout that’s built-in to the component
