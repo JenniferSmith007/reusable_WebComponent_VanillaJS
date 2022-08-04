@@ -124,7 +124,7 @@ this will take in the parameters of property, oldValue, and newValue. within the
 
 >  if(property === "comment"){
 >
->if(this.commentHolder){this.commentHolder.textContent = newValue}
+>if(this.commentHolder){this.commentHolder.textContent = newValue}}
 
 Do this for name and email as well. Creating the commentHolder will come soon. 
 
@@ -146,11 +146,18 @@ then to finish this file up call on customElemts.define
 
 > window.customElements.define('comment-component',CommentComponent); 
 
-^ this lets the component render on the window(screen)
+^ this let's the component render on the window(screen)
 
 final step will be to export 
 
-> export default './commentComponent.js'
+`` export default './commentComponent.js ``
+
+Now that the component is created time to add functionality! ⚡️
+
+
+
+
+
 
 
 
