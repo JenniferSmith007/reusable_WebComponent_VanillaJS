@@ -93,8 +93,9 @@ Using the DOM create a commentcomponent element and set it's attributes name / e
 ***Must have a template element for the ShadowDOM***
 
 Use the template.innerHTML to set a style to the comment component and give the text a span and set the id to match the text. 
-
+>
 >  <p> Comment:  <span id="comments"></span> </p>
+>
 
 #### 🪄 Building the class that extends HTMLElement 🪄: 
 
@@ -117,7 +118,9 @@ Then append the template to the shadowRoot
 Outside of the constructor, create a built in static mehtod ***observeAttributes()*** , this method will observe the change of value for our attributes created earlier 
 
 >static get observedAttributes() {
+    >
     >>return ['name', 'email', 'comment' ];
+    >
   >>>}
 
 
