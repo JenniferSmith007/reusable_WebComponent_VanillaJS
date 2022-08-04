@@ -79,9 +79,48 @@ append the form to the body
 
 #### ✔️ Creating the HTML element and Component: 
 
-Using the dom create a commentcomponent element and set it's attributes, then append the element to the body.
+Using the DOM create a commentcomponent element and set it's attributes name / email / comment / id, then append the element to the body.
 
-> 
+> let commentComponent = document.createElement("comment-component")
+
+>
+> commentComponent.setAttribute("comment", "")
+
+**Create the template element**
+
+> const template = document.createElement('template'); 
+
+***Must have a template element for the ShadowDOM***
+
+Use the template.innerHTML to set a style to the comment component and give the text a span and set the id to match the text. 
+
+>  <p> Comment:  <span id="comments"></span> </p>
+
+#### 🪄 Building the class that extends HTMLElement 🪄: 
+
+Create a component class that will extend HTMLElement 
+it will take in a 
+- Constructor 
+    - within the constructor call super()
+Inside the constructor still copy this code and paste it 
+> const shadow = this.attachShadow({mode: 'open'}); 
+>
+> this.shadowRoot.appendChild(template.content.cloneNode(true)); 
+>
+
+
+This piece of code will attach the shadowDOM and keep it open to modify (modifiy the template element)
+<br>
+Then append the template to the shadowRoot 
+<br> 
+
+Outside of the constructor, create a built in static mehtod ***observeAttributes()*** , this method will observe the change of value for our attributes created earlier 
+
+>static get observedAttributes() {
+    >>return ['name', 'email', 'comment' ];
+  >>>}
+
+
 
 
 
