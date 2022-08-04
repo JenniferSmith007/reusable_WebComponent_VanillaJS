@@ -8,6 +8,22 @@ Defining a custom HTML elements by creating a reusable comment element.  The com
 
 
 
- - Use Custom Elements:Can take a name, email address, and  comment as an attribute.
+ - Use Custom Elements: Can take a name, email address, and  comment as an attribute.
 
 - Display the name, email address, and attribute, in a custom layout that’s built-in to the component
+
+### What was done: 
+
+- Using the DOM, built a form and custom HTML element with attributes
+    - created a template element to hold the information 
+
+- Created a class that extends HTML 
+    - using the class to attach Shadow DOM and append the template
+
+- Defined the class and element with DOM customElements.define
+
+
+
+
+
+
