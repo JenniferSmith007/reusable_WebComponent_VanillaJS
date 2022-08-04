@@ -23,12 +23,21 @@ ________________________________________________
 
 〰️ Let's get started on creating a custom element **no css** will be included in this guide. 〰️
 
-#### Folder Structure:
+#### 🗂 Folder Structure:
 
-To begin creating the component, create a folder that holds: 
+To begin creating the component, create a folder named components that holds: 
 
 - commentComponent.js
 - addCommentState.js
 - FormDomSetUp.js
+
+#### 📌 Imports: 
+
+After creating the files in the **Component** folder, go to the main.js file and import all files. 
+
+*example* ->
+> import'./Components/commentComponent'
+
+
 
 
