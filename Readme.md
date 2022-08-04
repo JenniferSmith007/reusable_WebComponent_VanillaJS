@@ -94,7 +94,7 @@ Using the DOM create a commentcomponent element and set it's attributes name / e
 
 Use the template.innerHTML to set a style to the comment component and give the text a span and set the id to match the text. 
 >
->  <p> Comment:  <span id="comments"></span> </p>
+>   Comment: <span id="comments"></span> 
 >
 
 #### 🪄 Building the class that extends HTMLElement 🪄: 
