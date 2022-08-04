@@ -35,7 +35,7 @@ To begin creating the component, create a folder named components that holds:
 
 After creating the files in the **Component** folder, go to the main.js file and import all files. 
 
-*example* ->
+*example*:
 > import'./Components/commentComponent'
 
 
