@@ -94,7 +94,7 @@ Using the DOM create a commentcomponent element and set it's attributes name / e
 
 Use the template.innerHTML to set a style to the comment component and give the text a span and set the id to match the text. 
 >
->   Comment: <span id="comments"></span> 
+>   Comment: span id="comments">/span
 >
 
 #### 🪄 Building the class that extends HTMLElement 🪄: 
@@ -115,10 +115,44 @@ This piece of code will attach the shadowDOM and keep it open to modify (modifiy
 Then append the template to the shadowRoot 
 <br> 
 
-Outside of the constructor, create a built in static mehtod ***observeAttributes()*** , this method will observe the change of value for our attributes created earlier 
+Outside of the constructor, create a built in static mehtod ***observeAttributes()*** , this method will observe the change of value for our attributes created earlier. 
 
 >static get observedAttributes() {return ['name', 'email', 'comment' ];}
+
+Outside of the attribute method, create a attributeChangedCallback method. 
+this will take in the parameters of property, oldValue, and newValue. within the code block we will check to see if property equals the attribute. If it does then we change our template to hold the value of what was entered. 
+
+>  if(property === "comment"){
 >
+>if(this.commentHolder){this.commentHolder.textContent = newValue}
+
+Do this for name and email as well. Creating the commentHolder will come soon. 
+
+Outside of the changedCallback method, create a method called ***connectedCallback*** , this sets up the ShadowDOM template. 
+
+first create variables for name, email and comment 
+
+> this.commentHolder = this.shadowRoot.querySelector('#comments')
+>
+>this.commentHolder.innerText = this.getAttribute('comment')
+>
+> const commentInput = this.getAttribute("comment")
+
+still inside the connectedCallback, time to input the logic for entered values. 
+
+>   if(commentInput !== 0){this.commentHolder.textContent = commentInput}
+
+then to finish this file up call on customElemts.define
+
+> window.customElements.define('comment-component',CommentComponent); 
+
+^ this lets the component render on the window(screen)
+
+final step will be to export 
+
+> export default './commentComponent.js'
+
+
 
 
 
