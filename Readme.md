@@ -117,11 +117,9 @@ Then append the template to the shadowRoot
 
 Outside of the constructor, create a built in static mehtod ***observeAttributes()*** , this method will observe the change of value for our attributes created earlier 
 
->static get observedAttributes() {
-    >
-    >>return ['name', 'email', 'comment' ];
-    >
-  >>>}
+>static get observedAttributes() {return ['name', 'email', 'comment' ];}
+>
+
 
 
 
