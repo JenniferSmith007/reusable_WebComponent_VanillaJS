@@ -179,7 +179,7 @@ Inside of this function, create the button function that takes in the value give
 ``let text = document.createTextNode(nameval);``
     ``nameAns.appendChild(text);``
 
-*** the last part is adding the state object to the button comment functionality**
+*** the last part is adding the state object to the button comment functionality***
 
 within the button functionality, we will take our state object and have it equal to the value of comment. 
 `` state.theCustomElement = theCustomElement.value``
