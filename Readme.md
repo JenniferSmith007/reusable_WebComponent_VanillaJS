@@ -18,5 +18,5 @@ Update the page to display an image and add a comment form. The comment form sho
 - Used state to control the comments being posted 
 - Created User interface design using **Figma** 
 - Implemented design using DOM and CSS 
-
+------------------><--------------------------
 # ❗️How to create a custom element with shadow DOM and add basic state 🚀
