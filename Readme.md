@@ -11,3 +11,10 @@ Update the page to display an image and add a comment form. The comment form sho
 - A submit button
 - All three comment fields should be required and be valid before being submitted
 - Comments should be managed by a ***state manager***; whenever a new comment is added, it should trigger the state manager that then updates the displayed comments on the site
+
+
+### What was done to complete task: 
+- Created functionality to take user input with a form 
+- Used state to control the comments being posted 
+- Created User interface design using ***Figma** 
+- implemented design using DOM and CSS 
