@@ -101,7 +101,7 @@ it will take in a
 - Constructor 
     - within the constructor call super(),Inside the constructor still copy this code and paste it 
     <br>
-    
+
 `` const shadow = this.attachShadow({mode: 'open'}); ``
 
 ``this.shadowRoot.appendChild(template.content.cloneNode(true)); ``
@@ -145,7 +145,48 @@ final step will be to export
 
 `` export default './commentComponent.js ``
 
-Now that the component is created time to add functionality! ⚡️
+
+#### ⚡️ Creating Functionality and State ⚡️:
+
+Switch to the addCommentState.js file, and let's create some state ⚙️!
+
+create a variable called state and set it as an open object, the open object will hold the state of the comment. After the open object, use Object.defineProperty, we will pass in state and the comment object attribute, from there we will set val and have the comment component innerHTML equal to val.  
+
+``let state = {};``
+``Object.defineProperty(state, "com", {set: (val)=> {display.innerHTML = val},});``
+
+Ok, now that we have state time to set up functionality. 
+
+first, create a display variable that will equal to the value of querySelector("whatever the id attribute is of the custom component") after the display create a button variable and have it equal to the button attribute id value. 
+
+``const display = document.querySelector("comment-component");``
+``const btn = document.querySelector("#button");``
+
+before creating the button function, create a function to wait on loading the DOM 
+
+`` document.addEventListener("DOMContentLoaded", () => {}``
+
+Inside of this function, create the button function that takes in the value give to form.
+<br>
+ **The purpose of this guide is to show custom element creation and state so, I won't get into creating the button function. **
+
+ example on creating the functionality:
+
+ ``    let nameval = document.getElementById("name").value;``
+        
+``document.getElementById("name").required = true;``
+``let nameAns = document.createElement("p");``
+``let text = document.createTextNode(nameval);``
+    ``nameAns.appendChild(text);``
+
+*** the last part is adding the state object to the button comment functionality**
+
+within the button functionality, we will take our state object and have it equal to the value of comment. 
+`` state.theCustomElement = theCustomElement.value``
+
+#### That is the end of creating Web component with state! 🥳
+
+
 
 
 
