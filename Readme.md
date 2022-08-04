@@ -23,4 +23,4 @@ Defining a custom HTML elements by creating a reusable comment element.  The com
 - Defined the class and element with DOM customElements.define
 
 
-#### *Second Branch explains how to make the comment component dynamic with basic state and built in Shadow DOM elements 
+#### *Second Branch explains how to make the comment component dynamic with basic state and built in Shadow DOM elements ➞ ➞ ➞
