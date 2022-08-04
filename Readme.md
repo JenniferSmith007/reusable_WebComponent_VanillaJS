@@ -36,7 +36,7 @@ To begin creating the component, create a folder named components that holds:
 After creating the files in the **Component** folder, go to the main.js file and import all files. 
 
 
-> import'./Components/commentComponent'
+`` import'./Components/commentComponent'``
 
 Inside of commentComponent add a import statement for addCommentState.js
 
@@ -61,18 +61,15 @@ Append all the elements to the form then append the form to the body
 
 creating the button 
 
-> let button = document.createElement("button");
->
+`` let button = document.createElement("button");``
 
-> button.setAttribute("id", "button");
->
-append the element to the form 
->
-> form.appendChild(button)
->
-append the form to the body
->
-> document.body.appendChild(form)
+
+`` button.setAttribute("id", "button");``
+ 
+
+`` form.appendChild(button)``
+
+`` document.body.appendChild(form)``
 
 
 
@@ -81,21 +78,21 @@ append the form to the body
 
 Using the DOM create a commentcomponent element and set it's attributes name / email / comment / id, then append the element to the body.
 
-> let commentComponent = document.createElement("comment-component")
+`` let commentComponent = document.createElement("comment-component")``
 
->
-> commentComponent.setAttribute("comment", "")
+
+`` commentComponent.setAttribute("comment", "")``
 
 **Create the template element**
 
-> const template = document.createElement('template'); 
+`` const template = document.createElement('template'); ``
 
 ***Must have a template element for the ShadowDOM***
 
 Use the template.innerHTML to set a style to the comment component and give the text a span and set the id to match the text. 
->
->   Comment: span id="comments">/span
->
+
+``   Comment: span id="comments">/span``
+
 
 #### 🪄 Building the class that extends HTMLElement 🪄: 
 
@@ -104,10 +101,9 @@ it will take in a
 - Constructor 
     - within the constructor call super()
 Inside the constructor still copy this code and paste it 
-> const shadow = this.attachShadow({mode: 'open'}); 
->
-> this.shadowRoot.appendChild(template.content.cloneNode(true)); 
->
+`` const shadow = this.attachShadow({mode: 'open'}); ``
+
+``this.shadowRoot.appendChild(template.content.cloneNode(true)); ``
 
 
 This piece of code will attach the shadowDOM and keep it open to modify (modifiy the template element)
@@ -117,14 +113,12 @@ Then append the template to the shadowRoot
 
 Outside of the constructor, create a built in static mehtod ***observeAttributes()*** , this method will observe the change of value for our attributes created earlier. 
 
->static get observedAttributes() {return ['name', 'email', 'comment' ];}
+``static get observedAttributes() {return ['name', 'email', 'comment' ];}``
 
 Outside of the attribute method, create a attributeChangedCallback method. 
 this will take in the parameters of property, oldValue, and newValue. within the code block we will check to see if property equals the attribute. If it does then we change our template to hold the value of what was entered. 
 
->  if(property === "comment"){
->
->if(this.commentHolder){this.commentHolder.textContent = newValue}}
+`` if(property === "comment"){if(this.commentHolder){this.commentHolder.textContent = newValue}}``
 
 Do this for name and email as well. Creating the commentHolder will come soon. 
 
@@ -132,19 +126,17 @@ Outside of the changedCallback method, create a method called ***connectedCallba
 
 first create variables for name, email and comment 
 
-> this.commentHolder = this.shadowRoot.querySelector('#comments')
->
->this.commentHolder.innerText = this.getAttribute('comment')
->
-> const commentInput = this.getAttribute("comment")
+`` this.commentHolder = this.shadowRoot.querySelector('#comments')``
+``this.commentHolder.innerText = this.getAttribute('comment')``
+``const commentInput = this.getAttribute("comment")``
 
 still inside the connectedCallback, time to input the logic for entered values. 
 
->   if(commentInput !== 0){this.commentHolder.textContent = commentInput}
+``  if(commentInput !== 0){this.commentHolder.textContent = commentInput}``
 
 then to finish this file up call on customElemts.define
 
-> window.customElements.define('comment-component',CommentComponent); 
+ ``window.customElements.define('comment-component',CommentComponent); ``
 
 ^ this let's the component render on the window(screen)
 
