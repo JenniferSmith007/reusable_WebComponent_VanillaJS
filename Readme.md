@@ -99,8 +99,9 @@ Use the template.innerHTML to set a style to the comment component and give the 
 Create a component class that will extend HTMLElement 
 it will take in a 
 - Constructor 
-    - within the constructor call super()
-Inside the constructor still copy this code and paste it 
+    - within the constructor call super(),Inside the constructor still copy this code and paste it 
+    <br>
+    
 `` const shadow = this.attachShadow({mode: 'open'}); ``
 
 ``this.shadowRoot.appendChild(template.content.cloneNode(true)); ``
