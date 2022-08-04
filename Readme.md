@@ -35,8 +35,49 @@ To begin creating the component, create a folder named components that holds:
 
 After creating the files in the **Component** folder, go to the main.js file and import all files. 
 
-*example*:
+
 > import'./Components/commentComponent'
+
+Inside of commentComponent add a import statement for addCommentState.js
+
+*The purpose of importing is so that certain functions and variables can be used file to file.*
+
+
+#### Creating the Form ✔️: 
+Using the DOM or the body in the index.html to create a form element that will have 
+
+- Name Input 
+    - attributes: type, id, required
+- Email Input 
+    - attributes: type, id, required
+- Comment Input 
+    - attributes: type, id, required
+- checkbox Input 
+    - attributes: type, id, required
+- Button 
+    - attributes: type, id
+
+Append all the elements to the form then append the form to the body 
+
+creating the button 
+> let button = document.createElement("button");
+> button.setAttribute("type", "submit");
+> button.setAttribute("id", "button");
+append the element to the form 
+> form.appendChild(button)
+append the form to the body
+> document.body.appendChild(form)
+
+
+
+
+#### ✔️ Creating the HTML element and Component: 
+
+Using the dom create a commentcomponent element and set it's attributes, then append the element to the body.
+
+> 
+
+
 
 
 
