@@ -19,4 +19,4 @@ Update the page to display an image and add a comment form. The comment form sho
 - Created User interface design using **Figma** 
 - Implemented design using DOM and CSS 
 ________________________________________________
-# ❗️How to create a custom element with shadow DOM and add basic state 🚀
+# ❗️How to create a **custom element** with **shadow DOM** and add basic **state** 🚀
