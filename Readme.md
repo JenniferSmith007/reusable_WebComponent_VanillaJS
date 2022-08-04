@@ -64,7 +64,7 @@ creating the button
 > let button = document.createElement("button");
 >
 
->> button.setAttribute("id", "button");
+> button.setAttribute("id", "button");
 >
 append the element to the form 
 >
