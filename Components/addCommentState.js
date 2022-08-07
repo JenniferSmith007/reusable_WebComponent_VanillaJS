@@ -1,5 +1,6 @@
 
 
+
 import "./commentComponent";
 
 import "./FormDomSetUp";
@@ -61,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
      
         
         const commentSec = document.querySelector("#com");
-
+        // console.log(commentSec)
     
         let postComm = document.querySelector("input[type=checkbox]:checked")
 
@@ -126,6 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
         commentSec.setAttribute("email", emailval);
         commentSec.setAttribute("comment", commentval);
 
+
+
         
     // let newDates = document.getElementById("dates")
     // console.log(newDates)
@@ -148,21 +151,46 @@ document.addEventListener("DOMContentLoaded", () => {
 //         commentSec.setAttribute("dates",gettingDate );
 
 
+// commentSec holds all comments
+
 
         
         let commentDisplay = document.createElement('div')
         commentDisplay.setAttribute("id", "commentDisplay")
 
+        // commentSec.appendChild(commentDisplay);
+
+        // let newComment = commentSec.forEach(comment => {
+        //   commentDisplay.innerHTML = `${comment}`
+        // })
+        // newComment;
+        // // commentDisplay.appendChild(template);
+        // // commentDisplay.appendChild(emailAns);
+        // // commentDisplay.appendChild(commentAns);
+
+        //   // document.body.appendChild(commentSec)
+        //   // if (commentDisplay.val >= 2){
+        //   //   document.getElementById("#com").style.display = "none"
+        //   // }
+
         document.body.appendChild(commentDisplay)
+        
      
         const myElementClone = commentSec.cloneNode()
-        console.log(myElementClone)
+        // console.log(myElementClone)
         commentDisplay.appendChild(myElementClone)
          if (myElementClone >= 2){
           document.getElementById("#com").style.display = "none"
          }
       
       });
+
+
+      // get parent by id 
+      // create a new div 
+      // append the div to the parent 
+
+
 
         
   }  
@@ -198,3 +226,8 @@ console.log('clicked')
 
 
 export default "./addCommentState.js";
+
+
+
+
+// 

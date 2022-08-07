@@ -6,7 +6,7 @@ import'./addCommentState'
 // let main = document.getElementById("main")
 // console.log(main)
 
-
+// change names to match exactly for what they do 
 
 let commentComponent = document.createElement("comment-component")
 commentComponent.setAttribute("name", "")
