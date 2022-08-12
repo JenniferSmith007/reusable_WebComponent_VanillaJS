@@ -51,6 +51,12 @@ button.setAttribute("type", "submit");
 button.setAttribute("id", "button");
 button.textContent="submit"
 
+
+let deleteButton = document.createElement("button");
+deleteButton.setAttribute("type", "submit");
+deleteButton.setAttribute("id", "delbutton");
+deleteButton.textContent="delete"
+
 let reset = document.createElement("input")
 reset.setAttribute("type", "reset")
 reset.setAttribute("value", "reset")
@@ -63,6 +69,7 @@ form.appendChild(commentInput)
 form.appendChild(label)
 form.appendChild(checkbox)
 form.appendChild(button)
+form.appendChild(deleteButton)
 form.appendChild(reset)
 document.body.appendChild(form)
 // main.appendChild(form)
