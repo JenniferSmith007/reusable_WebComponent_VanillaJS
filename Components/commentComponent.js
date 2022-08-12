@@ -1,129 +1,121 @@
-// creating the custom element 
-import'./addCommentState'
+class Store {
+  constructor(init ) {
+    const self = this;
+    // store is context 
+    this.subscribers = [];
 
-
-
-// let main = document.getElementById("main")
-// console.log(main)
-
-// change names to match exactly for what they do 
-
-let commentComponent = document.createElement("comment-component")
-commentComponent.setAttribute("name", "")
-commentComponent.setAttribute("email", "")
-commentComponent.setAttribute("comment", "")
-commentComponent.setAttribute("id", "com")
-document.body.appendChild(commentComponent)
-
-// creating the template 
-
-const template = document.createElement('template'); 
-template.setAttribute("id", "temp")
-
-template.innerHTML = `
-<style>
-
-
-
-
-</style>
-
-<p>  Name: <span id="names"></span> </p>
-      <p> Email: <span id="emails"></span> </p>
-      <p> Comment:  <span id="comments"></span> </p>
-      
+    this.state = new Proxy(init, {
+      set(state, key, value) {
+        state[key] = value;
+        // w.e parent node innerHTML is null
+        console.log(self.subscribers)
+        self.subscribers.forEach((subscriber) => subscriber(state));
+        
+        console.log('this is the set method')
+       
+        // return true;
+      },
+    });
+  }
+  subscribe(cb) {
+    if (typeof cb !== "function") {
+      throw new Error("You must subscribe with a function");
+    }
+    console.log(this.subscribers)
+  this.subscribers.push(cb);
+   
+  // console.log('we have subscribed')
     
-`;
+    
+  }
+  addComment(state, value) {
 
+    
+    let newState = state.comments.push(value)
+    // returns length of array 
+    console.log(value)
+    console.log(newState)
+    console.log(this.state.comments)
+    this.state = Object.assign(this.state, state)
+    
+    console.log(this.state)
+    
+  }
+  getAllComments() {
+    return this.state.comments;
+  }
 
+  // anytime the state changes (when a new comment comes in / delete comments .. any change to comment chnages state) 
+  // only 1 sub that renders to html
 
-// append the shadow dom 
+  // 
+}
+
+const store = new Store({ comments:[] });
+console.log(store);
+// create new store and want to sub to store 
+// sub to store anytime state changes subscriber is going to call method (adding comment)
+store.subscribe((state) => {
+  console.log(state)
+  let commentState = state.comments;
+ 
+  commentState.forEach(subComment => document.body.appendChild(subComment))
+  
+});
+
+// want bunch of comments to show
+// call on the component class to render the comments submitted
+// use the connected call back to call on html
 
 class CommentComponent extends HTMLElement {
-
-constructor(){
+  constructor() {
     super();
+    this.name = ''
+    this.email = ''
+    this.comment = ''
 
-const shadow = this.attachShadow({mode: 'open'}); 
-
-this.shadowRoot.appendChild(template.content.cloneNode(true)); 
-
-shadow.append(template)
-
-
-}
-
-static get observedAttributes() {
-    return ['name', 'email', 'comment' ];
+    // to init the proper 
+    // used open string later will be changed 
   }
+//  look out for attr 
+// if change then call changed att method
+  static get observedAttributes() {
+    return ["name", "email", "comment"];
+  }
+// not talking about property but attr 
 
-  attributeChangedCallback(property, oldValue, newValue) {
-    if (oldValue === newValue) return; 
+// this method is to know if user adds new value, this method refelcts that value 
+// refelect the change in the js props 
+// update the prop to let it know we have the att
+  attributeChangedCallback(attributeName, oldValue, newValue) {
+    if (oldValue === newValue) return;
+    this[attributeName] = newValue; 
+    // updating the empty string with the new value; 
+    // using [] because dont quite know the atrr === this.name , this.email etc 
 
-    if(property === "name"){
-      if(this.nameHolder){
-        this.nameHolder.textContent = newValue
-      }
-    }
-    if(property === "email"){
-      if(this.emailHolder){
-        this.emailHolder.textContent = newValue
-      }
-    }
-    if(property === "comment"){
-      if(this.commentHolder){
-        this.commentHolder.textContent = newValue
-      }
-    }
     
   }
 
-connectedCallback() {
+  //  connected callabck is for custom element
+  // add html to build custom element
+  // listeners related to custom element
+  // has to be related to custom element
+  // no btn event listener
+  // btn is not apart of the custom element
 
-this.nameHolder = this.shadowRoot.querySelector("#names")
-
-this.emailHolder = this.shadowRoot.querySelector('#emails')
-
-this.commentHolder = this.shadowRoot.querySelector('#comments')
-
-
-
-this.nameHolder.innerText = this.getAttribute('name')
-this.emailHolder.innerText = this.getAttribute('email')
-this.commentHolder.innerText = this.getAttribute('comment')
-
-
- 
-const nameInput = this.getAttribute("name")
-const emailInput = this.getAttribute("email")
-const commentInput = this.getAttribute("comment")
-
-
-
-
-
-
-if(nameInput !== 0){
-    this.nameHolder.textContent = nameInput
+  connectedCallback() {
+    // will be claaed fist time DOM is loaded
+    this.innerHTML = `
+    <p> Name:  ${this.name} </p>
+    <p> email: ${this.email} </p> 
+    <p> comment: ${this.comment} </p>
+    `
   }
-  if(emailInput!== 0){
-    this.emailHolder.textContent= emailInput
-  }
-  if(commentInput !== 0){
-    this.commentHolder.textContent = commentInput
-  }
-
-
 }
+// name.email,comment are properties of JS 
+// 
 
-
-
-
-}
-
-window.customElements.define('comment-component',CommentComponent);
-
-
+window.customElements.define("comment-component", CommentComponent);
 
 
 
@@ -137,6 +129,32 @@ window.customElements.define('comment-component',CommentComponent);
 
 
 
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector("#button");
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    let commentDisplay = document.createElement('comment-component')
+    let name = document.getElementById("name").value
+    let email = document.getElementById("email").value
+    let comment = document.getElementById("comment").value
+
+    commentDisplay.setAttribute("name", name)
+    commentDisplay.setAttribute("email", email)
+    commentDisplay.setAttribute("comment", comment)
+    // document.body.appendChild(commentDisplay)
+    
+    store.addComment(store.state, commentDisplay);
+  
+  
+   
+  });
+});
 
 // export default CommentComponent
-export default './commentComponent.js'
+export default "./commentComponent.js";
