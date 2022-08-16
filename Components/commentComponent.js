@@ -1,13 +1,41 @@
+import {database} from "./indexeddb"
+
+
+
 class Store {
   constructor(init ) {
     const self = this;
     // store is context 
     this.subscribers = [];
+    database.then(async (db) => {
+      this.db = db
+      const comment = await db.get("comments", "comment")
+      if(comment){
+        for(const[key,value] of Objects.entries(comment))
+        this.set[key,value]
+      }
+ 
+    })
+
+
+
 
     this.state = new Proxy(init, {
-      set(state, key, value) {
+      async set(state, key, value) {
         state[key] = value;
-        // w.e parent node innerHTML is null
+       
+
+          if(self.db){
+          await self.db.add("comments", 
+          value[value.length - 1])
+          }
+
+
+
+
+
+
+
         console.log(self.subscribers)
         self.subscribers.forEach((subscriber) => subscriber(state));
         
@@ -23,6 +51,7 @@ class Store {
     }
     console.log(this.subscribers)
   this.subscribers.push(cb);
+  console.log(cb)
    
   // console.log('we have subscribed')
     
@@ -32,6 +61,7 @@ class Store {
 
     
     let newState = state.comments.push(value)
+    console.log(newState)
     // returns length of array 
     console.log(value)
     console.log(newState)
@@ -143,13 +173,18 @@ document.addEventListener("DOMContentLoaded", () => {
     let name = document.getElementById("name").value
     let email = document.getElementById("email").value
     let comment = document.getElementById("comment").value
+    let commentObject = {
+      name: `${name}`,
+      email: `${email}`,
+      comment: `${comment}`,
 
-    commentDisplay.setAttribute("name", name)
-    commentDisplay.setAttribute("email", email)
-    commentDisplay.setAttribute("comment", comment)
-    // document.body.appendChild(commentDisplay)
+    }
+    commentDisplay.setAttribute("name", commentObject.name)
+    commentDisplay.setAttribute("email", commentObject.email)
+    commentDisplay.setAttribute("comment", commentObject.comment)
+    document.body.appendChild(commentDisplay)
     
-    store.addComment(store.state, commentDisplay);
+    store.addComment(store.state, commentObject);
   
   
    
