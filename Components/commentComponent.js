@@ -1,7 +1,6 @@
 import {database} from "./indexeddb"
 
 
-
 class Store {
   constructor(init ) {
     const self = this;

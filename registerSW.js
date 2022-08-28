@@ -1,7 +1,28 @@
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', async () => {
-       navigator.serviceWorker.register('./sw.js', { scope: '/' })
-    //   console.log('regi')
+// if ('serviceWorker' in navigator) {
+//     window.addEventListener('load', async () => {
+//        navigator.serviceWorker.register('./sw.js', { scope: '/' })
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+       //   console.log('regi')
     //   if (regi.waiting) {
     //     invokeServiceWorkerUpdateFlow(regi)
     // }
@@ -33,6 +54,6 @@ if ('serviceWorker' in navigator) {
   //     }
   // })
 
-    })
-  }
+  //   })
+  // }
   

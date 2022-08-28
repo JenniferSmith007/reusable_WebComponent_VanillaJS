@@ -1,6 +1,7 @@
 {
     "name": "Patagonia comments",
     "short_name": "pcomments",
+    
     "start_url": "/index.html",
     "icons": [
         {
