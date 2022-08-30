@@ -20,4 +20,3 @@ jobs:
         with:
           folder: build # build.
           clean: true
-          branch: Service-worker
